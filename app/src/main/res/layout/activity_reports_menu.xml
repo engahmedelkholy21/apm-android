@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:padding="16dp"
+    tools:context=".ReportsMenuActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="القوائم والتقارير"
+            android:textAlignment="center"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp" />
+
+        <Button
+            android:id="@+id/salesReportsBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="تقارير المبيعات"
+            android:textAllCaps="false"
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:id="@+id/purchaseReportsBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="تقارير المشتريات"
+            android:textAllCaps="false"
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:id="@+id/cashInBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="الوارد للخزينة"
+            android:textAllCaps="false"
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:id="@+id/cashOutBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="الصادر من الخزينة"
+            android:textAllCaps="false"
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:id="@+id/debtorsListBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="قائمة المدينين"
+            android:textAllCaps="false"
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:id="@+id/creditorsListBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="قائمة الدائنين"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.apmmanage.products_page">
+
+    <TextView
+        android:id="@+id/pro_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:padding="10dp"
+        android:text="@string/pro_list"
+        android:textColor="@color/colorPrimary"
+
+        android:textSize="15sp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/pro_name_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/pro_hint_txt"
+        android:textColorHint="@color/white"
+        android:layout_below="@+id/pro_header"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="16dp"
+        app:boxCornerRadiusTopEnd="15dp"
+        app:boxCornerRadiusTopStart="15dp"
+        app:boxStrokeColor="@color/blue"
+        app:boxStrokeWidth="2dp"
+        app:counterEnabled="false"
+        app:helperTextEnabled="false">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pro_name_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_below="@+id/pro_header"
+            android:textDirection="rtl"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/btn_Get_pro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pro_name_layout"
+
+        android:text="بحث">
+
+    </Button>
+
+    <ListView
+        android:id="@+id/LV_Country"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@color/teal_200"
+        android:layout_below="@+id/btn_Get_pro">
+    </ListView>
+
+
+</RelativeLayout>

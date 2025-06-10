@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layoutDirection="rtl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <!-- Search Bar -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:elevation="4dp">
+
+        <AutoCompleteTextView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="بحث بالاسم..."
+            android:padding="16dp"
+            android:background="@android:color/white"
+            android:textColor="@android:color/black"
+            android:textColorHint="#888888"
+            android:completionThreshold="1"
+            android:singleLine="true"
+            android:imeOptions="actionSearch"/>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Table Card -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:elevation="4dp">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:scrollbarStyle="outsideOverlay">
+
+                <ScrollView
+                    android:id="@+id/scrollView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scrollbarStyle="outsideOverlay"
+                    android:background="@android:color/white">
+
+                    <TableLayout
+                        android:id="@+id/tableLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:stretchColumns="*"
+                        android:shrinkColumns="*">
+
+                        <!-- Header Row -->
+                        <TableRow
+                            android:background="#DADADA"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:text="الاسم"
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
+                                android:textStyle="bold"
+                                android:padding="12dp"
+                                android:textSize="16sp"
+                                android:gravity="start"
+                                android:singleLine="true"
+                                android:ellipsize="end"/>
+
+                            <TextView
+                                android:text="المطلوب"
+                                android:layout_width="0dp"
+                                android:layout_weight="1.2"
+                                android:textStyle="bold"
+                                android:padding="12dp"
+                                android:textSize="16sp"
+                                android:gravity="end"
+                                android:singleLine="true"
+                                android:ellipsize="end"/>
+
+                            <TextView
+                                android:text="المدفوع"
+                                android:layout_width="0dp"
+                                android:layout_weight="1.2"
+                                android:textStyle="bold"
+                                android:padding="12dp"
+                                android:textSize="16sp"
+                                android:gravity="end"
+                                android:singleLine="true"
+                                android:ellipsize="end"/>
+
+                            <TextView
+                                android:text="الباقي"
+                                android:layout_width="0dp"
+                                android:layout_weight="1.2"
+                                android:textStyle="bold"
+                                android:padding="12dp"
+                                android:textSize="16sp"
+                                android:gravity="end"
+                                android:singleLine="true"
+                                android:ellipsize="end"/>
+                        </TableRow>
+
+                    </TableLayout>
+                </ScrollView>
+            </HorizontalScrollView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Total Section -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:elevation="4dp">
+
+        <TextView
+            android:id="@+id/totalText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            android:padding="16dp"
+            android:textAlignment="viewStart"
+            android:background="#EEEEEE"
+            android:textStyle="bold"/>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

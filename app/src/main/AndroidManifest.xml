@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-feature
+
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher_apm_foreground"
+        android:label="APMmanage"
+        android:roundIcon="@mipmap/ic_launcher_apm_foreground"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.APMManage"
+        tools:targetApi="31">
+        <activity
+            android:name=".MainActivity2"
+            android:exported="false"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/Theme.APMManage" />
+
+        <activity
+            android:name=".products_page"
+            android:exported="false" />
+        <activity
+            android:name=".Home_page"
+            android:exported="false" />
+        <activity
+            android:name=".Barcode_activity"
+
+            />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.APMManage.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".PricingActivity" />
+
+        <activity android:name=".ReportsMenuActivity" />
+
+        <activity
+            android:name=".HomeActivity"
+            android:label="@string/title_activity_home_page"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        </activity>
+
+        <activity
+            android:name=".AddProductActivity"
+            android:label="@string/title_AddProductActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        </activity>
+
+        <activity
+            android:name=".MadeenActivity"
+            android:label="@string/title_MadeenActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        </activity>
+
+        <activity
+            android:name=".Da2nActivity"
+            android:label="@string/title_Da2n_Activity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        </activity>
+        <activity
+            android:name=".SalesReportActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
+
+        </activity>
+
+        <activity
+            android:name=".PurchasesReportActivity"
+            android:label="@string/purchases_report"
+           />
+
+
+        <activity
+            android:name=".IncomeActivity"
+            android:label="@string/Income_report" />
+
+        <activity
+            android:name=".OutcomeActivity"
+            android:label="@string/Outcome_report" />
+
+        <activity
+            android:name=".ProfitsActivity"
+            android:label="@string/profits_report"
+            />
+        <activity
+            android:name=".Mosta7akatShowActivity"
+            android:label="@string/most7kat_madeenen"
+            />
+        <activity
+            android:name=".Mosta7akatDa2neenActivity"
+            android:label="@string/most7kat_da2neen"
+            />
+
+        <activity
+            android:name=".pay_madeen"
+            android:label="@string/pay_madeen"
+            />
+        <activity
+            android:name=".pay_da2n"
+            android:label="@string/pay_da2n"
+            />
+
+
+        <activity
+            android:name=".SafeStatusActivity"
+            android:label="@string/safe_status"
+            />
+
+        <activity
+            android:name=".AddToIncomeActivity"
+            android:label="@string/add_to_income"
+            />
+        <activity
+            android:name=".SarfFromOutcomeActivity"
+            android:label="@string/sarf_from_outcome"
+            />
+
+        <activity
+            android:name=".SellActivity"
+            android:label="@string/sell_activity"
+            />
+
+        <activity
+            android:name=".PayKestActivity"
+            android:label="@string/title_PayKestActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        </activity>
+
+        <activity
+            android:name=".AksatSummaryActivity"
+            android:label="@string/title_AksatSummaryActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        </activity>
+
+        <activity
+            android:name=".HalekShowActivity"
+            android:label="@string/title_HalekShowActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        </activity>
+
+        <activity
+            android:name=".CustomersShowActivity"
+            android:label="@string/title_CustomersShowActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        </activity>
+
+        <activity
+            android:name=".SuppliersShowActivity"
+            android:label="@string/title_SuppliersShowActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        </activity>
+
+        <activity
+            android:name=".LoansUnderRevisionActivity"
+            android:label="@string/title_LoansUnderRevisionActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        </activity>
+
+        <activity
+            android:name=".DelayedAksatActivity"
+            android:label="@string/title_DelayedAksatActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        </activity>
+
+        <activity
+            android:name=".LoanAksatShowActivity"
+            android:label="@string/title_LoanAksatShowActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        </activity>
+
+    </application>
+
+</manifest>

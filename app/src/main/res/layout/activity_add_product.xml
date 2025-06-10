@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Product Name -->
+        <EditText
+            android:id="@+id/nameTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Product Name"
+            android:inputType="textPersonName"
+            android:padding="8dp" />
+
+        <!-- Cost Price -->
+        <EditText
+            android:id="@+id/costTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Cost Price"
+            android:inputType="numberDecimal"
+            android:padding="8dp"
+            android:layout_marginTop="8dp" />
+
+        <!-- Sale Price -->
+        <EditText
+            android:id="@+id/bee3Txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Sale Price"
+            android:inputType="numberDecimal"
+            android:padding="8dp"
+            android:layout_marginTop="8dp" />
+
+        <!-- Count -->
+        <EditText
+            android:id="@+id/countTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Count"
+            android:inputType="number"
+            android:padding="8dp"
+            android:layout_marginTop="8dp" />
+
+        <!-- Limit -->
+        <EditText
+            android:id="@+id/limitTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Limit"
+            android:inputType="number"
+            android:padding="8dp"
+            android:layout_marginTop="8dp" />
+
+        <!-- Internal Code -->
+        <EditText
+            android:id="@+id/intCodeTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Internal Code (optional)"
+            android:inputType="number"
+            android:padding="8dp"
+            android:layout_marginTop="8dp" />
+
+        <!-- Basic Profit (%) -->
+        <EditText
+            android:id="@+id/basicProfitTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Basic Profit (%)"
+            android:inputType="numberDecimal"
+            android:padding="8dp"
+            android:layout_marginTop="8dp" />
+
+        <!-- Pieces in Packet -->
+        <EditText
+            android:id="@+id/piecesInPacketTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Pieces in Packet"
+            android:inputType="number"
+            android:padding="8dp"
+            android:layout_marginTop="8dp" />
+
+        <!-- Expiration Date -->
+        <EditText
+            android:id="@+id/expirationDateTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Expiration Date (YYYY-MM-DD)"
+            android:inputType="date"
+            android:padding="8dp"
+            android:layout_marginTop="8dp" />
+
+        <!-- Manufacturer -->
+        <EditText
+            android:id="@+id/madaFa3alaTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Manufacturer"
+            android:inputType="text"
+            android:padding="8dp"
+            android:layout_marginTop="8dp" />
+
+        <!-- Location -->
+        <EditText
+            android:id="@+id/maradTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Location"
+            android:inputType="text"
+            android:padding="8dp"
+            android:layout_marginTop="8dp" />
+
+        <!-- Supplier -->
+        <EditText
+            android:id="@+id/mwaredTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Supplier"
+            android:inputType="text"
+            android:padding="8dp"
+            android:layout_marginTop="8dp" />
+
+        <!-- Supplier Phone -->
+        <EditText
+            android:id="@+id/mwaredPhoneTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Supplier Phone"
+            android:inputType="phone"
+            android:padding="8dp"
+            android:layout_marginTop="8dp" />
+
+        <!-- Added By -->
+        <EditText
+            android:id="@+id/addedByTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Added By"
+            android:inputType="textPersonName"
+            android:padding="8dp"
+            android:layout_marginTop="8dp" />
+
+        <!-- Stock Spinner -->
+        <Spinner
+            android:id="@+id/stockSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" />
+
+        <!-- Category Spinner -->
+        <Spinner
+            android:id="@+id/categorySpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp" />
+
+        <!-- Save Button -->
+        <Button
+            android:id="@+id/saveBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save Product"
+            android:layout_marginTop="24dp"
+            android:padding="12dp" />
+
+    </LinearLayout>
+</ScrollView>

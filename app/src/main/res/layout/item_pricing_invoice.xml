@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="12dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:background="?android:attr/selectableItemBackground">
+
+    <!-- Product Info -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/itemNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Product Name"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/itemCodeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Code"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+            android:textColor="#666" />
+    </LinearLayout>
+
+    <!-- Quantity -->
+    <TextView
+        android:id="@+id/itemQtyTv"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:text="Qty: 1"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+
+    <!-- Price -->
+    <TextView
+        android:id="@+id/itemPriceTv"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:text="EGP 0.00"
+        android:gravity="end"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+
+    <!-- Delete -->
+    <ImageButton
+        android:id="@+id/deleteItemBtn"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="8dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@android:drawable/ic_menu_delete"
+        android:contentDescription="Delete" />
+</LinearLayout>

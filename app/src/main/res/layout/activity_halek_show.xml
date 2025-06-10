@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Professional Redesign Suggestions:
+  - Extract all hardcoded strings (@string resources) for localization and maintainability.
+  - Use Material Design Components (e.g., TextInputLayout, MaterialButton, RecyclerView) for a modern look and feel (requires dependency).
+  - Define styles and themes for consistent UI elements.
+  - Use dimension resources (@dimen) for padding/margins.
+  - Consider using ConstraintLayout for more flexible layouts.
+  - For the ListView, use a RecyclerView with a custom ViewHolder and item layout for better performance and customization.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#F5F5F5"
+    android:layoutDirection="rtl"
+    tools:context=".HalekShowActivity">
+
+    <!-- Stock Label -->
+    <TextView
+        android:id="@+id/stockTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginBottom="16dp"
+        android:text="الفرع: [اسم الفرع]"
+        android:textAppearance="@android:style/TextAppearance.Material.Headline"
+        android:textSize="22sp"
+        android:textColor="#333333"
+        android:textStyle="bold" />
+
+    <!-- Filters Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@android:color/white"
+        android:layout_marginBottom="16dp"
+        android:elevation="2dp">
+
+        <!-- Product Name Filter -->
+
+
+        <AutoCompleteTextView
+            android:id="@+id/nameTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="ادخل اسم الصنف للبحث"
+            android:padding="12dp"
+            android:background="@drawable/abc_edit_text_material"
+            android:backgroundTint="#F0F0F0"
+            android:textSize="16sp" />
+
+        <!-- Dates Filter -->
+        <TextView
+            android:text="فلترة حسب التاريخ:"
+            android:textAppearance="@android:style/TextAppearance.Material.Body2"
+            android:textColor="#555555"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="4dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:text="من:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#555555"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/fromDateBtn"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="اختر تاريخ البدء"
+                android:backgroundTint="#E8E8E8"
+                android:textColor="#444444"
+                android:padding="12dp" />
+
+            <TextView
+                android:text="الى:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#555555"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/toDateBtn"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="اختر تاريخ الانتهاء"
+                android:backgroundTint="#E8E8E8"
+                android:textColor="#444444"
+                android:padding="12dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Data Display Header (Simulated Table Header) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:background="#4CAF50"
+        android:layoutDirection="rtl">
+
+        <TextView android:layout_width="0dp" android:layout_weight="2" android:layout_height="wrap_content" android:text="الاسم" android:textStyle="bold" android:textColor="@android:color/white" android:gravity="start" android:textSize="14sp"/>
+        <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="الكمية" android:textStyle="bold" android:textColor="@android:color/white" android:gravity="center" android:textSize="14sp"/>
+        <TextView android:layout_width="0dp" android:layout_weight="1.5" android:layout_height="wrap_content" android:text="التاريخ" android:textStyle="bold" android:textColor="@android:color/white" android:gravity="center" android:textSize="14sp"/>
+        <TextView android:layout_width="0dp" android:layout_weight="1.5" android:layout_height="wrap_content" android:text="الفرع" android:textStyle="bold" android:textColor="@android:color/white" android:gravity="end" android:textSize="14sp"/>
+
+    </LinearLayout>
+
+    <!-- Data List (ListView simulating table rows) -->
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="#DDDDDD"
+        android:dividerHeight="1dp"
+        android:background="@android:color/white"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="16dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:scrollbars="vertical"
+        android:fastScrollEnabled="true"
+        android:elevation="1dp"/>
+
+    <!-- Total Display -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical|end"
+        android:padding="16dp"
+        android:background="#E0E0E0">
+
+        <TextView
+            android:text="المجموع الكلي:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginEnd="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/totalTxt"
+            android:text="0.0"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#00796B"
+            android:background="@android:color/transparent"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</LinearLayout>

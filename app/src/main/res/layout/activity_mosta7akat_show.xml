@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="rtl"
+    android:background="#F3F4F6">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            android:elevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="المستحقات"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#1F2937"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/exportButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="تصدير التقرير"
+                    android:textColor="@color/white"
+                    app:iconTint="@color/white"
+                    android:backgroundTint="#059669"/>
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Filters Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Customer Name -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="اسم العميل"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/cstNameInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Date Range -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="16dp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="8dp"
+                            android:hint="من تاريخ"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/fromDateEdit"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="none"
+                                android:focusable="false"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="8dp"
+                            android:hint="إلى تاريخ"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/toDateEdit"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="none"
+                                android:focusable="false"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Results Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Table Header -->
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TableLayout
+                            android:id="@+id/tableLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:stretchColumns="*">
+
+                            <TableRow
+                                android:background="#F9FAFB"
+                                android:padding="12dp">
+
+                                <TextView
+                                    android:text="م"
+                                    android:layout_width="50dp"
+                                    style="@style/TableHeaderStyle"/>
+
+                                <TextView
+                                    android:text="نوع العملية"
+                                    android:layout_width="65dp"
+                                    style="@style/TableHeaderStyle"/>
+
+                                <TextView
+                                    android:text="تاريخ العملية"
+                                    style="@style/TableHeaderStyle"/>
+
+                                <TextView
+                                    android:text="تفاصيل"
+                                    android:layout_width="400dp"
+                                    style="@style/TableHeaderStyle"/>
+
+                                <TextView
+                                    android:text="حساب سابق"
+                                    android:layout_width="120dp"
+                                    style="@style/TableHeaderStyle"/>
+
+                                <TextView
+                                    android:text="المطلوب في الفاتورة"
+                                    android:layout_width="120dp"
+                                    style="@style/TableHeaderStyle"/>
+
+                                <TextView
+                                    android:text="قيمة الدفعه"
+                                    style="@style/TableHeaderStyle"/>
+
+                                <TextView
+                                    android:text="المطلوب بعد العمليه"
+                                    android:layout_width="120dp"
+                                    style="@style/TableHeaderStyle"/>
+
+                                <TextView
+                                    android:text="المستخدم"
+                                    android:layout_width="120dp"
+                                    style="@style/TableHeaderStyle"/>
+
+                                <TextView
+                                    android:text="رقم الفاتورة"
+                                    android:layout_width="60dp"
+                                    style="@style/TableHeaderStyle"/>
+                            </TableRow>
+                        </TableLayout>
+                    </HorizontalScrollView>
+
+                    <!-- Loading Progress -->
+                    <ProgressBar
+                        android:id="@+id/loadingProgress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        android:layout_margin="16dp"/>
+
+                    <!-- Totals -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:background="#F9FAFB">
+
+                        <TextView
+                            android:id="@+id/totalDueText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:textColor="#111827"
+                            android:textStyle="bold"
+                            android:paddingVertical="4dp"/>
+
+                        <TextView
+                            android:id="@+id/totalPaidText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:textColor="#111827"
+                            android:textStyle="bold"
+                            android:paddingVertical="4dp"/>
+
+                        <TextView
+                            android:id="@+id/totalRemainingText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:textColor="#111827"
+                            android:textStyle="bold"
+                            android:paddingVertical="4dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

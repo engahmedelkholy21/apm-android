@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layoutDirection="rtl"
+    android:background="#ffffff">
+
+    <!-- التاريخ من -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="6dp">
+
+        <TextView
+            android:id="@+id/fromTxt"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="من"
+            android:textSize="16sp"
+            android:gravity="right"
+            android:padding="8dp" />
+
+        <Button
+            android:id="@+id/fromBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="اختيار"
+            android:backgroundTint="#03A9F4"
+            android:textColor="#ffffff" />
+    </LinearLayout>
+
+    <!-- التاريخ إلى -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="6dp">
+
+        <TextView
+            android:id="@+id/toTxt"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="إلى"
+            android:textSize="16sp"
+            android:gravity="right"
+            android:padding="8dp" />
+
+        <Button
+            android:id="@+id/toBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="اختيار"
+            android:backgroundTint="#03A9F4"
+            android:textColor="#ffffff" />
+    </LinearLayout>
+
+    <!-- زر البحث -->
+    <Button
+        android:id="@+id/searchBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="بحث"
+        android:layout_marginTop="6dp"
+        android:backgroundTint="#4CAF50"
+        android:textColor="#ffffff" />
+
+    <!-- النتائج -->
+    <TextView
+        android:id="@+id/totalCount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="عدد الأقساط: 0"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginTop="12dp"
+        android:gravity="right" />
+
+    <TextView
+        android:id="@+id/totalAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="إجمالي: 0"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp"
+        android:gravity="right" />
+
+    <!-- RecyclerView لعرض النتائج -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="4dp"
+        android:scrollbars="vertical" />
+</LinearLayout>

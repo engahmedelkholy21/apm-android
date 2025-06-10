@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layoutDirection="rtl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <!-- Card container for the table -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_margin="16dp"
+        android:elevation="4dp">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollbarStyle="outsideOverlay">
+
+            <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:scrollbarStyle="outsideOverlay">
+
+                <TableLayout
+                    android:id="@+id/tableLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="*"
+                    android:shrinkColumns="*">
+
+                    <!-- Header Row -->
+                    <TableRow
+                        android:background="@color/surface_variant_light"
+                        style="@style/TableHeaderStyle">
+
+                        <TextView
+                            android:text="الاسم"
+                            style="@style/TableHeaderStyle"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"/>
+
+                        <TextView
+                            android:text="المطلوب"
+                            style="@style/TableHeaderStyle"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"/>
+
+                        <TextView
+                            android:text="المدفوع"
+                            style="@style/TableHeaderStyle"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"/>
+
+                        <TextView
+                            android:text="الباقي"
+                            style="@style/TableHeaderStyle"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"/>
+                    </TableRow>
+
+                    <!-- Data rows will be added dynamically -->
+
+                </TableLayout>
+            </ScrollView>
+        </HorizontalScrollView>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Total section with card -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:elevation="4dp">
+
+        <TextView
+            android:id="@+id/totalText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/gray_900"
+            android:padding="16dp"
+            android:textAlignment="viewStart"
+            android:background="@color/surface"/>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

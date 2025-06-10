@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#f2f2f2"
+    android:padding="12dp"
+    android:layout_marginBottom="8dp"
+    android:layoutDirection="rtl">
+
+    <TextView
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="القسط: | الحالة:"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:gravity="right"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/line2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="المبلغ: | الاستحقاق:"
+        android:textSize="14sp"
+        android:gravity="right"
+        android:layout_marginTop="4dp" />
+
+    <TextView
+        android:id="@+id/line3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="السداد: | ملاحظات:"
+        android:textSize="14sp"
+        android:gravity="right"
+        android:layout_marginTop="2dp" />
+</LinearLayout>

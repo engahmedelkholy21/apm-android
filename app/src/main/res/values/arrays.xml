@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="search_types">
+        <item>بحث في يوم أو فترة</item>
+        <item>بحث باسم المنتج</item>
+        <item>بحث باسم العميل</item>
+        <item>بحث بالموظف</item>
+        <item>بحث برقم الفاتورة</item>
+        <item>بحث بالفئة</item>
+    </string-array>
+
+    <string-array name="purchase_report_types">
+        <item>تقرير المشتريات اليومي</item>
+        <item>تقرير حسب المنتج</item>
+        <item>تقرير حسب المورد</item>
+    </string-array>
+</resources>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12dp"
+    android:layoutDirection="rtl"
+    android:background="#F5F5F5">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ملخص الأقساط"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:paddingBottom="8dp" />
+
+    <EditText
+        android:id="@+id/search_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ابحث باسم العميل أو كود التقسيط"
+        android:padding="10dp"
+        android:textDirection="rtl"
+        android:background="@android:drawable/edit_text"
+        android:textAlignment="viewStart" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#DDEEFF"
+        android:padding="4dp">
+
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+            android:text="القرض" android:gravity="center" android:textStyle="bold"/>
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="2"
+            android:text="العميل" android:gravity="center" android:textStyle="bold"/>
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+            android:text="المبلغ" android:gravity="center" android:textStyle="bold"/>
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+            android:text="المسدد" android:gravity="center" android:textStyle="bold"/>
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+            android:text="المتبقي" android:gravity="center" android:textStyle="bold"/>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#FFFFFF"
+        android:paddingTop="4dp"/>
+</LinearLayout>

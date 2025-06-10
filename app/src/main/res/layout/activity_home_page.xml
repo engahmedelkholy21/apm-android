@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="rtl"
+    android:background="@color/background"
+    tools:context=".Home_page">
+
+    <!-- Top App Bar -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="لوحة التحكم"
+            app:titleCentered="true"
+            app:titleTextAppearance="@style/TextAppearance.Material3.TitleLarge"
+            app:titleTextColor="@color/primary" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Quick Actions Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="الإجراءات السريعة"
+                        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                        android:layout_marginBottom="16dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- Barcode Scan Button -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/barcode_scan"
+                            android:layout_width="0dp"
+                            android:layout_height="120dp"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="8dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?attr/selectableItemBackground"
+                            app:cardCornerRadius="12dp"
+                            app:strokeWidth="1dp"
+                            app:strokeColor="@color/outline">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:gravity="center"
+                                android:padding="16dp">
+
+                                <ImageView
+                                    android:layout_width="48dp"
+                                    android:layout_height="48dp"
+                                    android:src="@drawable/ic_barcode"
+                                    android:contentDescription="Barcode Scan Icon"
+                                    app:tint="@color/primary"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="مسح الباركود"
+                                    android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                                    android:layout_marginTop="8dp"/>
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Product List Button -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/pro_btn"
+                            android:layout_width="0dp"
+                            android:layout_height="120dp"
+                            android:layout_weight="1"
+                            android:layout_marginStart="8dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?attr/selectableItemBackground"
+                            app:cardCornerRadius="12dp"
+                            app:strokeWidth="1dp"
+                            app:strokeColor="@color/outline">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:gravity="center"
+                                android:padding="16dp">
+
+                                <ImageView
+                                    android:layout_width="48dp"
+                                    android:layout_height="48dp"
+                                    android:src="@drawable/ic_products"
+                                    android:contentDescription="Product List Icon"
+                                    app:tint="@color/primary"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="قائمة الأصناف"
+                                    android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                                    android:layout_marginTop="8dp"/>
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Main Actions Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="العمليات الرئيسية"
+                        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                        android:layout_marginBottom="16dp"/>
+
+                    <!-- فاتورة تسعير Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/tas3eer_btn"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:textSize="20dp"
+                        android:text="فاتورة تسعير"
+                        android:textAlignment="viewStart"
+                        app:icon="@drawable/ic_sales"
+                        app:iconGravity="start"
+                        app:iconPadding="16dp"
+                        app:iconSize="35dp"
+                        android:layout_marginBottom="8dp"/>
+
+                    <!-- قائمة المبيعات Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/sales_btn"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="match_parent"
+                        android:textSize="20dp"
+                        android:layout_height="80dp"
+                        android:text="قائمة المبيعات"
+                        android:textAlignment="viewStart"
+                        app:icon="@drawable/ic_sales"
+                        app:iconGravity="start"
+                        app:iconPadding="16dp"
+                        app:iconSize="35dp"
+                        android:layout_marginBottom="8dp"/>
+
+                    <!-- قائمة المشتريات Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/purchases_btn"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="match_parent"
+                        android:textSize="20dp"
+                        android:layout_height="80dp"
+                        android:text="قائمة المشتريات"
+                        android:textAlignment="viewStart"
+                        app:icon="@drawable/ic_cart"
+                        app:iconGravity="start"
+                        app:iconPadding="16dp"
+                        app:iconSize="35dp"
+                        android:layout_marginBottom="8dp"/>
+
+                    <!-- التقارير Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/reports_btn"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="match_parent"
+                        android:textSize="20dp"
+                        android:layout_height="80dp"
+                        android:text="التقارير"
+                        android:textAlignment="viewStart"
+                        app:icon="@drawable/ic_reports"
+                        app:iconGravity="start"
+                        app:iconPadding="16dp"
+                        app:iconSize="35dp"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Note: FAB removed as per revised design -->
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

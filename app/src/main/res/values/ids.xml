@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="salesReportsBtn" type="id"/>
+    <item name="purchaseReportsBtn" type="id"/>
+    <item name="cashInBtn" type="id"/>
+    <item name="cashOutBtn" type="id"/>
+    <item name="debtorsListBtn" type="id"/>
+    <item name="creditorsListBtn" type="id"/>
+    <item name="totalRemainingText" type="id"/>
+    <item name="headerLayout" type="id" />
+    <item name="invoiceNumberTextView" type="id" />
+    <item name="dateTextView" type="id" />
+    <item name="wholesaleButton" type="id" />
+    <item name="customerLayout" type="id" />
+    <item name="customerNameEditText" type="id" />
+    <item name="customerPhoneEditText" type="id" />
+    <item name="customerAddressEditText" type="id" />
+    <item name="searchLayout" type="id" />
+    <item name="productSearchEditText" type="id" />
+    <item name="quantityEditText" type="id" />
+    <item name="addProductButton" type="id" />
+    <item name="barcodeButton" type="id" />
+    <item name="productsListView" type="id" />
+    <item name="totalsLayout" type="id" />
+    <item name="paymentLayout" type="id" />
+    <item name="subtotalTextView" type="id" />
+    <item name="taxTotalTextView" type="id" />
+    <item name="discountEditText" type="id" />
+    <item name="totalPriceTextView" type="id" />
+    <item name="buttonsLayout" type="id" />
+    <item name="paidAmountEditText" type="id" />
+    <item name="balanceTextView" type="id" />
+    <item name="creditRadioButton" type="id" />
+    <item name="cashRadioButton" type="id" />
+    <item name="salesPersonSpinner" type="id" />
+    <item name="clearButton" type="id" />
+    <item name="saveInvoiceButton" type="id" />
+</resources>

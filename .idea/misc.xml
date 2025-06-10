@@ -1,0 +1,29 @@
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Midoa/AndroidStudioProjects/APMManage/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Users/Midoa/AndroidStudioProjects/APMManage/app/src/main/res/layout/activity_all_sales.xml" value="0.22" />
+        <entry key="..\:/Users/Midoa/AndroidStudioProjects/APMManage/app/src/main/res/layout/activity_home_page.xml" value="0.33" />
+        <entry key="..\:/Users/Midoa/AndroidStudioProjects/APMManage/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Midoa/AndroidStudioProjects/APMManage/app/src/main/res/layout/activity_products_page.xml" value="0.24084778420038536" />
+        <entry key="..\:/Users/Midoa/AndroidStudioProjects/APMManage/app/src/main/res/layout/activity_sales_page.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/Midoa/AndroidStudioProjects/APMManage/app/src/main/res/layout/content_products_page.xml" value="0.18" />
+        <entry key="..\:/Users/Midoa/AndroidStudioProjects/APMManage/app/src/main/res/layout/content_scrolling.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Midoa/AndroidStudioProjects/APMManage/app/src/main/res/layout/fragment_first.xml" value="0.1" />
+        <entry key="..\:/Users/Midoa/AndroidStudioProjects/APMManage/app/src/main/res/layout/pro_list.xml" value="0.5" />
+        <entry key="..\:/Users/Midoa/AndroidStudioProjects/APMManage/app/src/main/res/layout/sales_list.xml" value="0.2777777777777778" />
+        <entry key="..\:/Users/Midoa/AndroidStudioProjects/APMManage/app/src/main/res/layout/sales_list_item.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="jbr-21" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+  <component name="SuppressKotlinCodeStyleNotification">
+    <option name="disableForAll" value="true" />
+  </component>
+</project>

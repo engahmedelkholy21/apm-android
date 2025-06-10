@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="rtl"
+    android:padding="16dp"
+    android:background="#ffffff">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- حقل إدخال واحد لكود أو اسم -->
+        <AutoCompleteTextView
+            android:id="@+id/loanCodeInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ادخل كود العملية أو اسم العميل"
+            android:gravity="right"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/searchBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="بحث"
+            android:backgroundTint="#1976D2"
+            android:textColor="#ffffff"
+            android:layout_marginBottom="12dp" />
+
+        <!-- بيانات التمويل -->
+        <TextView android:id="@+id/cstName" style="@style/infoLabel" android:text="العميل: " />
+        <TextView android:id="@+id/loanCode" style="@style/infoLabel" android:text="كود العملية: " />
+        <TextView android:id="@+id/mandoob" style="@style/infoLabel" android:text="المندوب: " />
+        <TextView android:id="@+id/damen" style="@style/infoLabel" android:text="الضامن: " />
+        <TextView android:id="@+id/moqadma" style="@style/infoLabel" android:text="المقدمة: " />
+        <TextView android:id="@+id/extra" style="@style/infoLabel" android:text="الفائدة: " />
+        <TextView android:id="@+id/masareef" style="@style/infoLabel" android:text="المصاريف: " />
+        <TextView android:id="@+id/finalAmount" style="@style/infoLabel" android:text="الإجمالي: " />
+        <TextView android:id="@+id/totalPaid" style="@style/infoLabel" android:text="المدفوع: " />
+        <TextView android:id="@+id/totalRemaining" style="@style/infoLabel" android:text="المتبقي: " />
+        <TextView android:id="@+id/loanNotes" style="@style/infoLabel" android:text="ملاحظات: " />
+        <TextView android:id="@+id/reb7" style="@style/infoLabel" android:text="الربح: " />
+        <TextView android:id="@+id/taklefa" style="@style/infoLabel" android:text="التكلفة: " />
+
+        <!-- الأقساط -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="الأقساط:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="right"
+            android:layout_marginTop="16dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/aksatRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:layout_marginBottom="16dp" />
+
+        <!-- المنتجات -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="المنتجات:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="right"
+            android:layout_marginTop="8dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/productsRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:layout_marginBottom="24dp" />
+    </LinearLayout>
+</ScrollView>

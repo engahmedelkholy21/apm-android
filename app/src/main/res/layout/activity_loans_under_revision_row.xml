@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:elevation="2dp"
+    android:padding="8dp"
+    android:layout_marginBottom="8dp"
+    android:layoutDirection="rtl">
+
+    <TextView
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="العميل: أحمد | الكود: L001"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#222"
+        android:background="#E0E0E0"
+        android:padding="6dp"
+        android:gravity="right" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1"
+        android:padding="6dp">
+
+        <TableRow>
+            <TextView android:text="المبلغ:"
+                android:textColor="#555" android:padding="4dp" android:textSize="14sp" />
+            <TextView android:id="@+id/amountTxt"
+                android:text="5000" android:padding="4dp" android:textSize="14sp"
+                android:textColor="#000" />
+        </TableRow>
+
+        <TableRow>
+            <TextView android:text="الفائدة:"
+                android:textColor="#555" android:padding="4dp" android:textSize="14sp" />
+            <TextView android:id="@+id/extraTxt"
+                android:text="500" android:padding="4dp" android:textSize="14sp"
+                android:textColor="#000" />
+        </TableRow>
+
+        <TableRow>
+            <TextView android:text="المصاريف:"
+                android:textColor="#555" android:padding="4dp" android:textSize="14sp" />
+            <TextView android:id="@+id/masareefTxt"
+                android:text="200" android:padding="4dp" android:textSize="14sp"
+                android:textColor="#000" />
+        </TableRow>
+
+        <TableRow>
+            <TextView android:text="الضامن:"
+                android:textColor="#555" android:padding="4dp" android:textSize="14sp" />
+            <TextView android:id="@+id/damenTxt"
+                android:text="محمد علي" android:padding="4dp" android:textSize="14sp"
+                android:textColor="#000" />
+        </TableRow>
+
+        <TableRow>
+            <TextView android:text="المدة:"
+                android:textColor="#555" android:padding="4dp" android:textSize="14sp" />
+            <TextView android:id="@+id/periodTxt"
+                android:text="12 شهر" android:padding="4dp" android:textSize="14sp"
+                android:textColor="#000" />
+        </TableRow>
+
+    </TableLayout>
+</LinearLayout>
