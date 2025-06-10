@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layoutDirection="rtl"
@@ -12,37 +13,58 @@
         android:orientation="vertical">
 
         <!-- حقل إدخال واحد لكود أو اسم -->
-        <AutoCompleteTextView
-            android:id="@+id/loanCodeInput"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:hint="ادخل كود العملية أو اسم العميل"
-            android:gravity="right"
-            android:layout_marginBottom="8dp" />
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
 
-        <Button
+            <AutoCompleteTextView
+                android:id="@+id/loanCodeInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/searchBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="بحث"
-            android:backgroundTint="#1976D2"
-            android:textColor="#ffffff"
+            android:backgroundTint="@color/blue_600"
+            android:textColor="@color/white"
             android:layout_marginBottom="12dp" />
 
         <!-- بيانات التمويل -->
-        <TextView android:id="@+id/cstName" style="@style/infoLabel" android:text="العميل: " />
-        <TextView android:id="@+id/loanCode" style="@style/infoLabel" android:text="كود العملية: " />
-        <TextView android:id="@+id/mandoob" style="@style/infoLabel" android:text="المندوب: " />
-        <TextView android:id="@+id/damen" style="@style/infoLabel" android:text="الضامن: " />
-        <TextView android:id="@+id/moqadma" style="@style/infoLabel" android:text="المقدمة: " />
-        <TextView android:id="@+id/extra" style="@style/infoLabel" android:text="الفائدة: " />
-        <TextView android:id="@+id/masareef" style="@style/infoLabel" android:text="المصاريف: " />
-        <TextView android:id="@+id/finalAmount" style="@style/infoLabel" android:text="الإجمالي: " />
-        <TextView android:id="@+id/totalPaid" style="@style/infoLabel" android:text="المدفوع: " />
-        <TextView android:id="@+id/totalRemaining" style="@style/infoLabel" android:text="المتبقي: " />
-        <TextView android:id="@+id/loanNotes" style="@style/infoLabel" android:text="ملاحظات: " />
-        <TextView android:id="@+id/reb7" style="@style/infoLabel" android:text="الربح: " />
-        <TextView android:id="@+id/taklefa" style="@style/infoLabel" android:text="التكلفة: " />
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView android:id="@+id/cstName" style="@style/infoLabel" android:text="العميل: " />
+                <TextView android:id="@+id/loanCode" style="@style/infoLabel" android:text="كود العملية: " />
+                <TextView android:id="@+id/mandoob" style="@style/infoLabel" android:text="المندوب: " />
+                <TextView android:id="@+id/damen" style="@style/infoLabel" android:text="الضامن: " />
+                <TextView android:id="@+id/moqadma" style="@style/infoLabel" android:text="المقدمة: " />
+                <TextView android:id="@+id/extra" style="@style/infoLabel" android:text="الفائدة: " />
+                <TextView android:id="@+id/masareef" style="@style/infoLabel" android:text="المصاريف: " />
+                <TextView android:id="@+id/finalAmount" style="@style/infoLabel" android:text="الإجمالي: " />
+                <TextView android:id="@+id/totalPaid" style="@style/infoLabel" android:text="المدفوع: " />
+                <TextView android:id="@+id/totalRemaining" style="@style/infoLabel" android:text="المتبقي: " />
+                <TextView android:id="@+id/loanNotes" style="@style/infoLabel" android:text="ملاحظات: " />
+                <TextView android:id="@+id/reb7" style="@style/infoLabel" android:text="الربح: " />
+                <TextView android:id="@+id/taklefa" style="@style/infoLabel" android:text="التكلفة: " />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
         <!-- الأقساط -->
         <TextView
