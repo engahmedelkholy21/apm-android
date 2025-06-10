@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:background="#e8f5e9"
-    android:padding="12dp"
     android:layout_marginBottom="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="1dp"
     android:layoutDirection="rtl">
 
-    <TextView
-        android:id="@+id/line"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="المنتج: | الكمية: | السعر: | الإجمالي:"
-        android:textSize="15sp"
-        android:gravity="right"
-        android:textColor="#000000"
-        android:textStyle="bold" />
-</LinearLayout>
+        android:orientation="vertical"
+        android:background="#e8f5e9"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="المنتج: | الكمية: | السعر: | الإجمالي:"
+            android:textSize="15sp"
+            android:gravity="right"
+            android:textColor="#000000"
+            android:textStyle="bold" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
