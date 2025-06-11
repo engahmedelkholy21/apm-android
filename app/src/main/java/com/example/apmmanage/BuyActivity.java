@@ -1,8 +1,19 @@
 package com.example.apmmanage;
 
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
+
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.print.PrintHelper;
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.MultiFormatWriter;
+import com.google.zxing.WriterException;
+import com.google.zxing.common.BitMatrix;
+import com.journeyapps.barcodescanner.BarcodeEncoder;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,7 +30,17 @@ public class BuyActivity extends AppCompatActivity {
     private EditText supplierNameEditText, supplierPhoneEditText, supplierAddressEditText;
     private EditText productSearchEditText, quantityEditText, unitPriceEditText;
     private TextView invoiceNumberTextView, dateTextView, subtotalTextView, balanceTextView;
-    private EditText discountEditText, paidAmountEditText;
+    private EditText discountEditText, paidAmountEditText, attachmentEditText;
+    private CheckBox printBarcodeCheckBox;
+    private Uri selectedFileUri;
+    private final ActivityResultLauncher<String[]> filePickerLauncher = registerForActivityResult(
+            new ActivityResultContracts.OpenDocument(),
+            uri -> {
+                if (uri != null) {
+                    selectedFileUri = uri;
+                    attachmentEditText.setText(uri.getLastPathSegment());
+                }
+            });
     private ListView productsListView;
     private Button addProductButton, saveInvoiceButton;
 
@@ -43,6 +64,8 @@ public class BuyActivity extends AppCompatActivity {
         generateInvoiceNumber();
 
         addProductButton.setOnClickListener(v -> addProduct());
+        findViewById(R.id.attachmentButton).setOnClickListener(v ->
+                filePickerLauncher.launch(new String[]{"application/pdf", "image/*"}));
         saveInvoiceButton.setOnClickListener(v -> saveInvoice());
     }
 
@@ -59,6 +82,8 @@ public class BuyActivity extends AppCompatActivity {
         balanceTextView = findViewById(R.id.balanceTextView);
         discountEditText = findViewById(R.id.discountEditText);
         paidAmountEditText = findViewById(R.id.paidAmountEditText);
+        attachmentEditText = findViewById(R.id.attachmentEditText);
+        printBarcodeCheckBox = findViewById(R.id.printBarcodeCheckBox);
         productsListView = findViewById(R.id.productsListView);
         addProductButton = findViewById(R.id.addProductButton);
         saveInvoiceButton = findViewById(R.id.saveInvoiceButton);
@@ -132,6 +157,26 @@ public class BuyActivity extends AppCompatActivity {
         balanceTextView.setText(format.format(remaining));
     }
 
+    private void checkSupplier(Connection con) throws Exception {
+        String name = supplierNameEditText.getText().toString().trim();
+        if (name.isEmpty()) return;
+        try (PreparedStatement ps = con.prepareStatement(
+                "SELECT mwared_ID FROM mwardeen WHERE mwared_name = ?")) {
+            ps.setString(1, name);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (!rs.next()) {
+                    try (PreparedStatement ins = con.prepareStatement(
+                            "INSERT INTO mwardeen (mwared_name, mwared_phone, mwared_address) VALUES (?,?,?)")) {
+                        ins.setString(1, name);
+                        ins.setString(2, supplierPhoneEditText.getText().toString());
+                        ins.setString(3, supplierAddressEditText.getText().toString());
+                        ins.executeUpdate();
+                    }
+                }
+            }
+        }
+    }
+
     private void saveInvoice() {
         if (items.isEmpty()) {
             Toast.makeText(this, "لا توجد منتجات", Toast.LENGTH_SHORT).show();
@@ -141,7 +186,8 @@ public class BuyActivity extends AppCompatActivity {
         if (con != null) {
             try {
                 con.setAutoCommit(false);
-                String insertSql = "INSERT INTO Purchases_table (Purchases_id, Purchases_date, Purchases_mwared_name, Purchases_mwared_phone, Purchases_mwared_address, Purchases_madfoo3, Purchases_user, Purchases_product_ID, Purchases_product_name, Purchases_product_count, Purchases_unit_price, sales_notes, bounce, stock, price_before_discount, discount_nesba) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                checkSupplier(con);
+                String insertSql = "INSERT INTO Purchases_table (Purchases_id, Purchases_date, Purchases_mwared_name, Purchases_mwared_phone, Purchases_mwared_address, Purchases_madfoo3, Purchases_user, Purchases_product_ID, Purchases_product_name, Purchases_product_count, Purchases_unit_price, sales_notes, bounce, stock, price_before_discount, discount_nesba, attachment_path) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                 PreparedStatement ps = con.prepareStatement(insertSql);
                 for (PurchaseItem item : items) {
                     ps.setInt(1, Integer.parseInt(invoiceNumberTextView.getText().toString()));
@@ -160,6 +206,7 @@ public class BuyActivity extends AppCompatActivity {
                     ps.setString(14, "الرئيسي");
                     ps.setDouble(15, item.getPrice());
                     ps.setDouble(16, discountEditText.getText().toString().isEmpty() ? 0 : Double.parseDouble(discountEditText.getText().toString()));
+                    ps.setString(17, selectedFileUri != null ? selectedFileUri.toString() : null);
                     ps.addBatch();
                 }
                 ps.executeBatch();
@@ -178,11 +225,32 @@ public class BuyActivity extends AppCompatActivity {
                 ps.close();
                 ps2.close();
                 con.close();
+                if (printBarcodeCheckBox.isChecked()) {
+                    for (PurchaseItem it : items) {
+                        printBarcode(it.getCode());
+                    }
+                }
                 Toast.makeText(this, "تم حفظ الفاتورة", Toast.LENGTH_LONG).show();
                 finish();
             } catch (Exception e) {
                 Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
             }
+        }
+    }
+
+    private Bitmap generateBarcode(String data) throws WriterException {
+        BitMatrix matrix = new MultiFormatWriter().encode(data, BarcodeFormat.CODE_128, 400, 150);
+        return new BarcodeEncoder().createBitmap(matrix);
+    }
+
+    private void printBarcode(String data) {
+        try {
+            Bitmap bmp = generateBarcode(data);
+            PrintHelper helper = new PrintHelper(this);
+            helper.setScaleMode(PrintHelper.SCALE_MODE_FIT);
+            helper.printBitmap("barcode_" + data, bmp);
+        } catch (Exception e) {
+            Toast.makeText(this, "Barcode error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
 
