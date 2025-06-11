@@ -206,6 +206,13 @@ public class AddProductActivity extends AppCompatActivity {
             connection = new ConnectionHelper().conclass();
         }
 
+        /**
+         * Testing constructor allowing injection of a custom connection.
+         */
+        public ProductDAO(Connection connection) {
+            this.connection = connection;
+        }
+
         public boolean isProductExists(String name, String stock) throws SQLException {
             String sql = "SELECT pro_ID FROM products_table WHERE pro_name = ? AND pro_stock = ?";
             PreparedStatement ps = connection.prepareStatement(sql);
