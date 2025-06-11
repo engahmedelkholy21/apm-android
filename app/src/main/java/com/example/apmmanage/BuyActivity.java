@@ -141,7 +141,7 @@ public class BuyActivity extends AppCompatActivity {
         if (con != null) {
             try {
                 con.setAutoCommit(false);
-                String insertSql = "INSERT INTO Purchases_table (Purchases_id, Purchases_date, Purchases_mwared_name, Purchases_mwared_phone, Purchases_mwared_address, Purchases_product_ID, Purchases_product_name, Purchases_product_count, Purchases_unit_price, sales_notes, discount_nesba, stock, price_before_discount, sales_price_for_sell) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                String insertSql = "INSERT INTO Purchases_table (Purchases_id, Purchases_date, Purchases_mwared_name, Purchases_mwared_phone, Purchases_mwared_address, Purchases_madfoo3, Purchases_user, Purchases_product_ID, Purchases_product_name, Purchases_product_count, Purchases_unit_price, sales_notes, bounce, stock, price_before_discount, discount_nesba) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                 PreparedStatement ps = con.prepareStatement(insertSql);
                 for (PurchaseItem item : items) {
                     ps.setInt(1, Integer.parseInt(invoiceNumberTextView.getText().toString()));
@@ -149,15 +149,17 @@ public class BuyActivity extends AppCompatActivity {
                     ps.setString(3, supplierNameEditText.getText().toString());
                     ps.setString(4, supplierPhoneEditText.getText().toString());
                     ps.setString(5, supplierAddressEditText.getText().toString());
-                    ps.setString(6, item.getCode());
-                    ps.setString(7, item.getName());
-                    ps.setDouble(8, item.getQuantity());
-                    ps.setDouble(9, item.getPrice());
-                    ps.setString(10, "");
-                    ps.setDouble(11, discountEditText.getText().toString().isEmpty() ? 0 : Double.parseDouble(discountEditText.getText().toString()));
-                    ps.setString(12, "الرئيسي");
-                    ps.setDouble(13, item.getPrice());
-                    ps.setDouble(14, item.getPrice());
+                    ps.setDouble(6, paidAmountEditText.getText().toString().isEmpty() ? 0 : Double.parseDouble(paidAmountEditText.getText().toString()));
+                    ps.setString(7, GlobalData.user_name);
+                    ps.setString(8, item.getCode());
+                    ps.setString(9, item.getName());
+                    ps.setDouble(10, item.getQuantity());
+                    ps.setDouble(11, item.getPrice());
+                    ps.setString(12, "");
+                    ps.setDouble(13, balanceTextView.getText().toString().isEmpty() ? 0 : Double.parseDouble(balanceTextView.getText().toString().replace(",", "")));
+                    ps.setString(14, "الرئيسي");
+                    ps.setDouble(15, item.getPrice());
+                    ps.setDouble(16, discountEditText.getText().toString().isEmpty() ? 0 : Double.parseDouble(discountEditText.getText().toString()));
                     ps.addBatch();
                 }
                 ps.executeBatch();
