@@ -48,6 +48,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="18sp"/>
         </LinearLayout>
+
     </LinearLayout>
 
     <!-- Supplier Info -->
@@ -93,6 +94,32 @@
                 android:layout_weight="1"
                 android:hint="العنوان" />
         </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Attachment selection -->
+    <LinearLayout
+        android:id="@+id/attachmentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/supplierLayout"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
+
+        <EditText
+            android:id="@+id/attachmentEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="المرفق"
+            android:focusable="false"
+            android:inputType="none" />
+
+        <Button
+            android:id="@+id/attachmentButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ملف" />
     </LinearLayout>
 
     <!-- Product Search -->
@@ -100,7 +127,7 @@
         android:id="@+id/searchLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/supplierLayout"
+        android:layout_below="@id/attachmentLayout"
         android:layout_marginTop="8dp"
         android:orientation="horizontal">
 
@@ -212,6 +239,15 @@
                 android:layout_height="wrap_content"
                 android:text="حفظ" />
         </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/printBarcodeCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="طباعة باركود"
+            android:layout_margin="4dp"
+            android:layout_gravity="center_horizontal" />
+
     </LinearLayout>
 
 </RelativeLayout>
